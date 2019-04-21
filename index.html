@@ -8,20 +8,16 @@
 </head>
 <body>
   <script>
-    if(!!navigator.geolocation) {
-    // Support
-document.write("support");
-navigator.geolocation.getCurrentPosition(success);
-function success(position)
-{
-  document.write(position.coords.latitude);
-  document.write(position.coords.longitude);
+   function showMap(position) {
+  alert(position.coords.latitude+"+"+ position.coords.longitude);
 }
-  } else {
-    // No support
-    document.write("not");
-}
-    
+
+// One-shot position request.
+navigator.geolocation.getCurrentPosition(showMap);
     </script>
+
+
 </body>
+<script
+			  src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
 </html>
