@@ -9,12 +9,14 @@
 <body>
   <script type ="text/javascript">
     
-    navigator.geolocation.getCurrentPosition(function(position)
-    {
-        document.write("latitude = " + position.coords.latitude);
-        document.write("latitude = " + position.coords.longitude);
-        
-    });
+   if (google.loader.ClientLocation) {
+    var lat = google.loader.ClientLocation.latitude;
+    var lon = google.loader.ClientLocation.longitude
+    var center = new GLatLng(lat, lon);
+   
+    ipMap = new GMap2(document.getElementById("ipMap"));
+    ipMap.setCenter(center, 13);    
+}
     
     </script>
   
