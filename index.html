@@ -11,6 +11,12 @@
     if(!!navigator.geolocation) {
     // Support
 document.write("support");
+navigator.geolocation.getCurrentPosition(success);
+function success(position)
+{
+  document.write(position.coords.latitude);
+  document.write(position.coords.longitude);
+}
   } else {
     // No support
     document.write("not");
